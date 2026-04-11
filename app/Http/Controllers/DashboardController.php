@@ -6,31 +6,38 @@ use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    public function index(): View
+    public function dashboard(): View
     {
-        $stats = [
-            [
-                'title' => 'Total Users',
-                'value' => '120',
-                'description' => 'User terdaftar',
-            ],
-            [
-                'title' => 'Total Orders',
-                'value' => '85',
-                'description' => 'Pesanan bulan ini',
-            ],
-            [
-                'title' => 'Revenue',
-                'value' => 'Rp 12.5Jt',
-                'description' => 'Pendapatan bulan ini',
-            ],
-            [
-                'title' => 'Active Products',
-                'value' => '32',
-                'description' => 'Produk aktif',
-            ],
-        ];
+        return view('pages.dashboard');
+    }
 
-        return view('pages.dashboard', compact('stats'));
+    public function produk(): View
+    {
+        return view('pages.produk');
+    }
+
+    public function stokBarang(): View
+    {
+        return view('pages.stok-barang');
+    }
+
+    public function transaksi(): View
+    {
+        return view('pages.transaksi');
+    }
+
+    public function laporan(): View
+    {
+        return view('pages.laporan');
+    }
+
+    public function pegawai(): View
+    {
+        return view('pages.pegawai');
+    }
+
+    public function logout(): View
+    {
+        return view('pages.logout');
     }
 }

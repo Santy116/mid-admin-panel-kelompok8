@@ -1,11 +1,56 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@source "../views/**/*.blade.php";
+@source "../js/**/*.js";
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+    @apply bg-[#f3f4f6] text-slate-800 font-sans;
+}
+
+.sidebar-gradient {
+    background: linear-gradient(180deg, #2f3b52 0%, #364259 100%);
+}
+
+.panel-card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+}
+
+.panel-table {
+    @apply w-full border-separate border-spacing-0 overflow-hidden;
+}
+
+.panel-table thead th {
+    @apply bg-slate-50 px-6 py-4 text-left text-sm font-semibold text-slate-700 border-b border-slate-200;
+}
+
+.panel-table tbody td {
+    @apply px-6 py-4 text-sm text-slate-700 border-b border-slate-200;
+}
+
+.badge-success {
+    @apply inline-flex items-center rounded-md bg-green-500 px-4 py-2 text-sm font-semibold text-white;
+}
+
+.badge-warning {
+    @apply inline-flex items-center rounded-md bg-amber-400 px-4 py-2 text-sm font-semibold text-white;
+}
+
+.badge-danger {
+    @apply inline-flex items-center rounded-md bg-red-500 px-4 py-2 text-sm font-semibold text-white;
+}
+
+.btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-600;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50;
+}
+
+.input-search {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none placeholder:text-slate-400;
 }
